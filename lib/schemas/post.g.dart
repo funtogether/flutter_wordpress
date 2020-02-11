@@ -8,7 +8,7 @@ part of 'post.dart';
 
 class PostAdapter extends TypeAdapter<Post> {
   @override
-  final typeId = 0;
+  final typeId = 8;
 
   @override
   Post read(BinaryReader reader) {
