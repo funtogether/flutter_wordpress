@@ -20,7 +20,7 @@ part 'post.g.dart';
 ///
 /// Refer the above link to see which arguments are set based on different context modes.
 /// ([WordPressContext]).
-@HiveType(typeId: 0)
+@HiveType(typeId: 8)
 class Post {
   /// ID of the post
   @HiveField(0)
