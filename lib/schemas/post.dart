@@ -1,4 +1,5 @@
 import 'package:flutter_wordpress/constants.dart';
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'links.dart';
 import 'content.dart';
@@ -13,15 +14,20 @@ import 'category.dart';
 import 'tag.dart';
 import 'media.dart';
 
+part 'post.g.dart';
+
 /// A [WordPress Post](https://developer.wordpress.org/rest-api/reference/posts/)
 ///
 /// Refer the above link to see which arguments are set based on different context modes.
 /// ([WordPressContext]).
+@HiveType(typeId: 0)
 class Post {
   /// ID of the post
+  @HiveField(0)
   int id;
 
   /// The date the post was published, in the site's Timezone.
+  @HiveField(1)
   String date;
 
   /// The date the post was published, in GMT.
@@ -34,46 +40,64 @@ class Post {
   String password;
 
   /// An alphanumeric identifier unique to each post.
+  @HiveField(2)
   String slug;
 
   /// The state in which the post should be created (draft, publish etc.)
+  @HiveField(3)
   PostPageStatus status;
+  @HiveField(4)
   String type;
+  @HiveField(5)
   String link;
 
   /// Post title
+  @HiveField(6)
   Title title;
 
   /// Post content
+  @HiveField(7)
   Content content;
 
   /// Post excerpt
+  @HiveField(8)
   Excerpt excerpt;
 
   /// ID of the post author. Refer [User].
+  @HiveField(9)
   int authorID;
 
+  @HiveField(10)
   int featuredMediaID;
 
   /// Whether the post allows commenting.
+  @HiveField(11)
   PostCommentStatus commentStatus;
 
   /// Whether the post can be pinged.
+  @HiveField(12)
   PostPingStatus pingStatus;
 
   /// Whether the post needs to sticky i.e. a Featured post.
+  @HiveField(13)
   bool sticky;
+  @HiveField(14)
   String template;
 
   /// The format of the post.
+  @HiveField(15)
   PostFormat format;
 
   /// List of IDs of categories this post belongs to.
+  @HiveField(16)
   List<int> categoryIDs;
 
   /// List of IDs of tags this post should have.
+  @HiveField(17)
   List<int> tagIDs;
+  @HiveField(18)
   String permalinkTemplate;
+  @HiveField(19)
   String generatedSlug;
   Links lLinks;
 

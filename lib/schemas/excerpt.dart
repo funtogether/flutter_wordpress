@@ -1,6 +1,14 @@
+import 'package:hive/hive.dart';
+
+part 'excerpt.g.dart';
+
+@HiveType(typeId: 4)
 class Excerpt {
+  @HiveField(0)
   String raw;
+  @HiveField(1)
   String rendered;
+  @HiveField(2)
   bool protected;
 
   Excerpt({this.rendered});

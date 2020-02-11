@@ -1,3 +1,7 @@
+import 'package:hive/hive.dart';
+
+part 'constants.g.dart';
+
 const URL_JWT_BASE = '/wp-json/jwt-auth/v1';
 const URL_WP_BASE = '/wp-json/wp/v2';
 
@@ -34,31 +38,56 @@ enum PostOrderBy {
   slug,
   title,
 }
+
+@HiveType(typeId: 1)
 enum PostPageStatus {
+  @HiveField(0)
   publish,
+  @HiveField(1)
   future,
+  @HiveField(2)
   draft,
+  @HiveField(3)
   pending,
+  @HiveField(4)
   private,
 }
+
+@HiveType(typeId: 5)
 enum PostCommentStatus {
+  @HiveField(0)
   open,
+  @HiveField(1)
   closed,
 }
+@HiveType(typeId: 6)
 enum PostPingStatus {
+  @HiveField(0)
   open,
+  @HiveField(1)
   closed,
 }
+@HiveType(typeId: 7)
 enum PostFormat {
+  @HiveField(0)
   standard,
+  @HiveField(1)
   aside,
+  @HiveField(2)
   chat,
+  @HiveField(3)
   gallery,
+  @HiveField(4)
   link,
+  @HiveField(5)
   image,
+  @HiveField(6)
   quote,
+  @HiveField(7)
   status,
+  @HiveField(8)
   video,
+  @HiveField(9)
   audio,
 }
 

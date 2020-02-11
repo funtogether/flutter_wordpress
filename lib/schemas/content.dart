@@ -1,7 +1,16 @@
+import 'package:hive/hive.dart';
+
+part 'content.g.dart';
+
+@HiveType(typeId: 3)
 class Content {
+  @HiveField(0)
   String raw;
+  @HiveField(1)
   String rendered;
+  @HiveField(2)
   bool protected;
+  @HiveField(3)
   int blockVersion;
 
   Content({this.rendered});

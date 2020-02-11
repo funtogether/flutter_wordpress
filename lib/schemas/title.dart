@@ -1,5 +1,12 @@
+import 'package:hive/hive.dart';
+
+part 'title.g.dart';
+
+@HiveType(typeId: 2)
 class Title {
+  @HiveField(0)
   String raw;
+  @HiveField(1)
   String rendered;
 
   Title({this.rendered});
